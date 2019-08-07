@@ -14,12 +14,13 @@ height = 100
 minY, maxY = 10, 50
 minFontSize, maxFontSize = 45, 60
 
-textLength = 7
-lineNumber = 5
+textLength = 7  #Length of code
+lineNumber = 5  #Number line
+numSample = 1000 #Number image to generate
 
 
 def randomString(stringLength=6):
-    """Generate a random string of letters and digits """
+    """Generate a random string of letters """
     lettersAndDigits = 'abcdefghkmnpqrstvwxyzABCDEFGHKLMNPRSTUVWXYZ'
     return ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
 
@@ -30,36 +31,30 @@ def randomStringDigit(stringLength=6):
 
 
 def randomDigits(stringLength=6):
-    """Generate a random string of letters and digits """
+    """Generate a random string of digits """
     digits = '12345678'
     return ''.join(random.choice(digits) for i in range(stringLength))
-
-# Init image
-
-
-
 #  List font
-
 fontpaths = [
     # Chu nhoe dam
-    "./fonts/font1.ttf",
+    "./fonts/font_1_easy.ttf",
     # Chu nhoe thanh
-    "./fonts/font2.ttf",
-    "./fonts/font2.ttf",
-# Chu + ky hieu la 1
+    "./fonts/font_2_easy.ttf",
+    "./fonts/font_2_easy.ttf",
+    # Chu + ky hieu la 1
     "./fonts/font_4_hard.ttf",
-# Chu + ky hieu la 2
+    # Chu + ky hieu la 2
     "./fonts/font_5_hard.ttf",
     "./fonts/font_5_hard.ttf",
-#Bang so dien tu
+    #Bang so dien tu
     # "./fonts/font_6_hard.ttf",
-# Hoa la canh
+    # Hoa la canh
 #     "./fonts/font_7_hard.ttf",
 #     Chu bi nhoe
-    "./fonts/font3.ttf",
+    "./fonts/font_3_easy.ttf",
 ]
 data = []
-for j in range(1000):
+for j in range(numSample):
     img = np.ones((height, width, 3), np.uint8) * 255
 
     # Add noise
@@ -90,8 +85,6 @@ for j in range(1000):
         fontSize = random.randrange(minFontSize, maxFontSize, 1)
         # font = ImageFont.truetype(random.choice(fontpaths), fontSize)
         font = ImageFont.truetype(fontpaths[i], fontSize)
-
-
         characters = [
             randomString(1),
             randomDigits(1),
@@ -117,7 +110,6 @@ for j in range(1000):
         # draw.text((50, 50),  text, font = font, fill = (b, g, r))
 
     img = np.array(img_pil)
-
 
     print text
     file_name =  randomString(1) + randomStringDigit(16)
