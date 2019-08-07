@@ -1,6 +1,6 @@
 # Foobar
 
-Foobar is a Python library for dealing with word pluralization.
+Captcha-gen is a tool to generate captcha. Build on opencv library
 
 ## Installation
 
@@ -17,3 +17,8 @@ python main.py
 ```
 
 ## Demo
+![alt text](https://raw.githubusercontent.com/trunknx/captcha-gen/master/sample.jpg)
+
+## TODO
+- Rotate character
+- Generate complex background
