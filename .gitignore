@@ -1,0 +1,7 @@
+decode/*
+images/*
+venv2/*
+venv/*
+**venv**
+.idea/*
+.vscode/*
