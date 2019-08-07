@@ -16,7 +16,7 @@ minFontSize, maxFontSize = 45, 60
 
 textLength = 7  #Length of code
 lineNumber = 5  #Number line
-numSample = 1000 #Number image to generate
+numSample = 1 #Number image to generate
 
 
 def randomString(stringLength=6):
